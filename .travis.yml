@@ -1,6 +1,10 @@
 language: haskell
 
+before_install:
+    - ghc-pkg list
+
 install:
     - cabal update
+    - ghc-pkg list
     - cabal install hspec-shouldbe stringbuilder bytestring knob
     - cabal install
